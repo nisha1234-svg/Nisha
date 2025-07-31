@@ -1,0 +1,46 @@
+
+.hamburger {
+  position: relative;
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Top bar */
+.hamburger::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  top: -10px;  /* position above */
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Bottom bar */
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  bottom: -10px; /* position below */
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+/* When hamburger is toggled/open */
+.hamburger.open {
+  background-color: transparent; /* Hide middle bar */
+}
+
+.hamburger.open::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
